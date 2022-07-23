@@ -788,9 +788,9 @@ fn update_modifiers<T>(window: HWND, userdata: &WindowData<T>) {
     }
 }
 
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub(crate) type WindowLongPtr = LONG_PTR;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub(crate) type WindowLongPtr = LONG;
 
 /// Any window whose callback is configured to this function will have its events propagated
